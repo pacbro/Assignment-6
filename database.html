@@ -1,0 +1,80 @@
+
+<!doctype html>
+<title>Database</title>
+
+<div id="main"></div>
+
+<script>
+    var planetNames = ["Jupiter", "Venus", "Saturn", "Mars", "Philladelphia"];
+    var distancesFromEarth = [5.2, 0.72, 9.5, 1.5, .01];
+    var sunnyInAugust = [false, true, false, true, true];
+
+    //Display the planet information
+    let var planettext = "<ul>";
+
+    for (var i = 0; i < planetNames.length; i++) {
+
+        var hexcolor = randomHex();
+
+        planettext += "<li>Planet: style='" + randomHex + "'<b>" + planetNames[i] + "</b></li>";
+        planettext += "<li>Distance From Earth: " + distancesFromEarth[i] + "</li>";
+        planettext += "<li>Sunny in august?: " + sunnyInAugust[i] + "</li>";
+        planettext += "<li> ---------- <br></li>";
+        
+        console.log(planetNames[i]);
+        console.log(distancesFromEarth[i]);
+        console.log(sunnyInAugust[i]);
+        console.log("----------");
+    }
+    planettext += "</ul>";
+    document.getElementById("main").innerHTML = planettext;
+    //Find and display the sunny planets
+
+    let
+    var sunnytext = "<ul>";
+    for (var i = 0; i < planetNames.length; i++) {
+
+        var hexcolor = randomHex();
+
+        if (planetNames = "Philladelphia") {
+            sunnytext += "<li> It's always sunny in style='" + randomHex + "'<b>" + planetNames[i] + "</b></li>";
+        }
+        if
+        else(sunnyInAugust[i]) {
+            sunnytext += "<li> It's sunny in august in  style='" + randomHex + "'<b>" + planetNames[i] + "</b></li>";
+        }
+        else {
+            //do nothing
+        }
+
+        console.log("These planets are sunny in August:");
+        console.log(planetNames[i]);
+    }
+    sunnytext += "</ul>";
+    document.getElementById("main").innerHTML += sunnytext;
+    //write to div sunny planets
+
+
+
+    //Find the closest planet
+
+    var closestPlanet = "";
+    var shortestDistance = 10;
+
+    for (var i = 0; i < planetNames.length; i++) {
+        if (distancesFromEarth[i] < shortestDistance) {
+            shortestDistance = distancesFromEarth[i];
+            closestPlanet = planetNames[i];
+        }
+    }
+
+
+    console.log("Closest planet: " + closestPlanet);
+    console.log("Shortest distance: " + shortestDistance);
+
+    function randomHex() {
+        var hex = '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6);
+        return hex;
+    }
+
+</script>
